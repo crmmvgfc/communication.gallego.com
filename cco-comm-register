@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Communication Control Transmittal System | MVGFC</title>
+<style>
+:root{--green:#174b35;--green2:#236346;--gold:#c8a64b;--gold-light:#f5edcf;--ink:#203329;--muted:#68776d;--paper:#fff;--bg:#f3f6f2;--line:#dce5dc}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Arial,Helvetica,sans-serif}
+.wrap{max-width:1200px;margin:28px auto;padding:0 18px}
+.header{background:linear-gradient(120deg,var(--green),#102f23);color:#fff;border-bottom:5px solid var(--gold);border-radius:16px 16px 0 0;padding:26px 30px;display:flex;align-items:center;gap:20px}
+.logo{width:76px;height:76px;object-fit:contain;background:#fff;border-radius:12px;padding:5px}
+h1{font-size:clamp(21px,3vw,30px);margin:0;letter-spacing:.3px}.sub{color:#e9e2c8;margin:7px 0 0;font-size:13px}
+.panel{background:var(--paper);padding:25px 28px;border:1px solid var(--line);box-shadow:0 8px 26px #153c2510}
+.section-title{margin:0 0 18px;color:var(--green);font-size:18px;border-left:4px solid var(--gold);padding-left:11px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 20px}
+.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}
+label{font-weight:700;font-size:13px;color:#354b3d}
+input,select,textarea{width:100%;border:1px solid #cbd8cd;border-radius:8px;padding:11px 12px;background:#fff;color:var(--ink);font:inherit;min-height:43px}
+input:focus,select:focus,textarea:focus{outline:2px solid #c8a64b66;border-color:var(--gold)}
+textarea{min-height:82px;resize:vertical}
+.checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;padding:11px;border:1px solid var(--line);border-radius:8px;background:#fbfcfa}
+.checks label{font-weight:400;display:flex;align-items:flex-start;gap:8px}.checks input{width:auto;min-height:auto;margin-top:3px;accent-color:var(--green)}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+button{border:0;border-radius:8px;padding:11px 17px;font-weight:700;cursor:pointer}
+button:disabled{opacity:0.6;cursor:not-allowed}
+.primary{background:var(--green);color:white}.secondary{background:var(--gold-light);color:#4d3c0d;border:1px solid var(--gold)}.danger{background:#f8e8e5;color:#8a2c20}
+button:hover:not(:disabled){filter:brightness(.96)}
+.ticket{background:#f7f3e5;border:1px dashed var(--gold);border-radius:8px;padding:10px 12px;font-weight:700;color:var(--green);letter-spacing:.4px}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:1100px;font-size:13px}th{background:var(--green);color:#fff;text-align:left;padding:11px;white-space:nowrap}td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}tr:nth-child(even) td{background:#f8faf7}
+.pill{display:inline-block;border-radius:20px;padding:3px 8px;font-size:11px;font-weight:700;background:#edf2ed}.pill.RESOLVED{background:#e0f1e5;color:#1c6539}.pill.PENDING{background:#fff2ce;color:#795a00}.pill.CANCELLED{background:#f8e2df;color:#8b2d23}
+.searchbar{display:flex;gap:10px;align-items:center;margin:0 0 12px}.searchbar input{max-width:360px}
+footer{text-align:center;color:#66766b;font-size:12px;padding:20px 10px 28px}
+.note{color:var(--muted);font-size:12px;margin-top:10px}
+@media(max-width:700px){.header{padding:20px;align-items:flex-start}.logo{width:58px;height:58px}.panel{padding:20px 16px}.grid{grid-template-columns:1fr}.field.full{grid-column:auto}.checks{grid-template-columns:1fr}.wrap{margin:12px auto;padding:0 10px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="header">
+<img class="logo" src="https://mvgallego.edu.ph/assets/images/logo-192x192.png" alt="MVGFC logo">
+<div><h1>COMMUNICATION CONTROL TRANSMITTAL SYSTEM</h1>
+<p class="sub">Maintained and Controlled by CCO - Communication Control Information Dissemination Office</p></div>
+</header>
+<section class="panel">
+<h2 class="section-title">Communication Record Entry</h2>
+<form id="recordForm">
+<div class="grid">
+<div class="field"><label for="department">1. Department / Unit</label><select id="department" required><option value="">Select department / unit</option><optgroup label="Executive Leadership, Governance, and Institutional Management"><option value="Board of Trustees">Board of Trustees</option><option value="Office of the President">Office of the President</option><option value="Internal Audit Office">Internal Audit Office</option><option value="Data Privacy Office">Data Privacy Office</option><option value="Gender and Development Office">Gender and Development Office</option><option value="Quality Assurance Office">Quality Assurance Office</option><option value="Planning, Academic Initiatives and Evaluation Office">Planning, Academic Initiatives and Evaluation Office</option><option value="Accounting, Finance and Control Office">Accounting, Finance and Control Office</option><option value="Marketing and Events Office">Marketing and Events Office</option><option value="Communications Control Office">Communications Control Office</option><option value="Customer Relationship Management Unit">Customer Relationship Management Unit</option><option value="Communication Dissemination Management Unit">Communication Dissemination Management Unit</option></optgroup><optgroup label="Academic Affairs Division"><option value="Higher Education – Office of the Director of Instruction">Higher Education – Office of the Director of Instruction</option><option value="Institute of Teacher Education">Institute of Teacher Education</option><option value="Institute of Criminal Justice Education">Institute of Criminal Justice Education</option><option value="Institute of Business Management">Institute of Business Management</option><option value="Institute of Information and Communications Technology">Institute of Information and Communications Technology</option><option value="Institute of Nursing and Allied Health Sciences">Institute of Nursing and Allied Health Sciences</option><option value="Basic Education – Office of the High School Principal">Basic Education – Office of the High School Principal</option><option value="Technical-Vocational Education – Office of the TechVoc Head">Technical-Vocational Education – Office of the TechVoc Head</option></optgroup><optgroup label="Academic Support Services Division"><option value="Office of the Registrar">Office of the Registrar</option><option value="Research and Development Office">Research and Development Office</option><option value="Community Extension and Outreach Program Office">Community Extension and Outreach Program Office</option><option value="Library">Library</option><option value="Heritage Center">Heritage Center</option><option value="Reading Center">Reading Center</option><option value="Office of Student Affairs and Services">Office of Student Affairs and Services</option><option value="Student Engagement Services">Student Engagement Services</option><option value="Student Enrichment Services">Student Enrichment Services</option><option value="Guidance and Testing Unit">Guidance and Testing Unit</option><option value="Clinic/Student Health Services Unit">Clinic/Student Health Services Unit</option><option value="Career Development and Employability Center">Career Development and Employability Center</option></optgroup><optgroup label="Administrative Services Division"><option value="Administrative Services Office">Administrative Services Office</option><option value="Human Resource Office">Human Resource Office</option><option value="Records Management Office">Records Management Office</option><option value="Management Information Systems Office">Management Information Systems Office</option><option value="Property and Materials Control Office">Property and Materials Control Office</option><option value="Plant Site Development Office">Plant Site Development Office</option><option value="Purchasing Office">Purchasing Office</option><option value="Security and Safety Office">Security and Safety Office</option><option value="Canteen Services Unit">Canteen Services Unit</option></optgroup></select></div>
+<div class="field"><label>11. Tracking Number</label><div class="ticket" id="ticketPreview">Loading...</div></div>
+<div class="field full"><label>2. Mode of Communication (select all that apply)</label><div class="checks"><label><input type="checkbox" name="mode" value="Text">Text</label><label><input type="checkbox" name="mode" value="Official Messenger">Official Messenger</label><label><input type="checkbox" name="mode" value="MS Teams">MS Teams</label><label><input type="checkbox" name="mode" value="Email">Email</label><label><input type="checkbox" name="mode" value="Phone Call">Phone Call</label><label><input type="checkbox" name="mode" value="Physical Posters and Announcements">Physical Posters and Announcements</label><label><input type="checkbox" name="mode" value="Memorandum">Memorandum</label><label><input type="checkbox" name="mode" value="Social Media Post">Social Media Post</label><label><input type="checkbox" name="mode" value="Bulletin Board">Bulletin Board</label><label><input type="checkbox" name="mode" value="Information Letter">Information Letter</label></div></div>
+<div class="field"><label for="stakeholder">3. Stakeholder</label><select id="stakeholder" required><option value="">Select stakeholder</option><option value="External Partners">External Partners</option><option value="Faculty / Co Employee">Faculty / Co Employee</option><option value="External Stakeholders">External Stakeholders</option><option value="Alumni">Alumni</option><option value="Students">Students</option><optgroup label="Executive Leadership, Governance, and Institutional Management"><option value="Board of Trustees">Board of Trustees</option><option value="Office of the President">Office of the President</option><option value="Internal Audit Office">Internal Audit Office</option><option value="Data Privacy Office">Data Privacy Office</option><option value="Gender and Development Office">Gender and Development Office</option><option value="Quality Assurance Office">Quality Assurance Office</option><option value="Planning, Academic Initiatives and Evaluation Office">Planning, Academic Initiatives and Evaluation Office</option><option value="Accounting, Finance and Control Office">Accounting, Finance and Control Office</option><option value="Marketing and Events Office">Marketing and Events Office</option><option value="Communications Control Office">Communications Control Office</option><option value="Customer Relationship Management Unit">Customer Relationship Management Unit</option><option value="Communication Dissemination Management Unit">Communication Dissemination Management Unit</option></optgroup><optgroup label="Academic Affairs Division"><option value="Higher Education – Office of the Director of Instruction">Higher Education – Office of the Director of Instruction</option><option value="Institute of Teacher Education">Institute of Teacher Education</option><option value="Institute of Criminal Justice Education">Institute of Criminal Justice Education</option><option value="Institute of Business Management">Institute of Business Management</option><option value="Institute of Information and Communications Technology">Institute of Information and Communications Technology</option><option value="Institute of Nursing and Allied Health Sciences">Institute of Nursing and Allied Health Sciences</option><option value="Basic Education – Office of the High School Principal">Basic Education – Office of the High School Principal</option><option value="Technical-Vocational Education – Office of the TechVoc Head">Technical-Vocational Education – Office of the TechVoc Head</option></optgroup><optgroup label="Academic Support Services Division"><option value="Office of the Registrar">Office of the Registrar</option><option value="Research and Development Office">Research and Development Office</option><option value="Community Extension and Outreach Program Office">Community Extension and Outreach Program Office</option><option value="Library">Library</option><option value="Heritage Center">Heritage Center</option><option value="Reading Center">Reading Center</option><option value="Office of Student Affairs and Services">Office of Student Affairs and Services</option><option value="Student Engagement Services">Student Engagement Services</option><option value="Student Enrichment Services">Student Enrichment Services</option><option value="Guidance and Testing Unit">Guidance and Testing Unit</option><option value="Clinic/Student Health Services Unit">Clinic/Student Health Services Unit</option><option value="Career Development and Employability Center">Career Development and Employability Center</option></optgroup><optgroup label="Administrative Services Division"><option value="Administrative Services Office">Administrative Services Office</option><option value="Human Resource Office">Human Resource Office</option><option value="Records Management Office">Records Management Office</option><option value="Management Information Systems Office">Management Information Systems Office</option><option value="Property and Materials Control Office">Property and Materials Control Office</option><option value="Plant Site Development Office">Plant Site Development Office</option><option value="Purchasing Office">Purchasing Office</option><option value="Security and Safety Office">Security and Safety Office</option><option value="Canteen Services Unit">Canteen Services Unit</option></optgroup></select></div>
+<div class="field"><label for="commType">4. Communication Type</label><select id="commType" required><option value="">Select type</option><option value="Incoming">Incoming</option><option value="Outgoing">Outgoing</option></select></div>
+<div class="field"><label for="sla">5. Service Level Agreement</label><select id="sla" required><option value="">Select service level</option><option value="within 24 Hours">within 24 Hours</option><option value="2-3 business days">2-3 business days</option><option value="5 calendar days">5 calendar days</option><option value="7 business days">7 business days</option><option value="More than 7 business days">More than 7 business days</option></select></div>
+<div class="field"><label for="infoType">6. Information Type</label><select id="infoType" required><option value="">Select information type</option><option value="MEMO">MEMO</option><option value="INFORMATION ANNOUNCEMENT">INFORMATION ANNOUNCEMENT</option><option value="REQUEST/ REQUISITION">REQUEST/ REQUISITION</option><option value="CMO">CMO</option><option value="TESDA Memo">TESDA Memo</option><option value="DepED Memo">DepED Memo</option><option value="Invitation">Invitation</option><option value="Complaints and Feedback">Complaints and Feedback</option><option value="Open Survey">Open Survey</option><option value="Executive Order (EO)">Executive Order (EO)</option><option value="Administrative Order (AO)">Administrative Order (AO)</option><option value="Republic Act (RA)">Republic Act (RA)</option><option value="Local Ordinance">Local Ordinance</option><option value="Special Order (SO)">Special Order (SO)</option><option value="Office Order">Office Order</option><option value="Memorandum Circular (MC)">Memorandum Circular (MC)</option><option value="Business Letter (Liham Pangnegosyo)">Business Letter (Liham Pangnegosyo)</option><option value="Minutes of the Meeting">Minutes of the Meeting (Katitikan ng Pulong)</option><option value="Agenda">Agenda</option><option value="Notice of Meeting">Notice of Meeting</option><option value="Project Proposal">Project Proposal</option><option value="Purchase Order (PO)">Purchase Order (PO)</option><option value="Invoice at Official Receipt">Invoice at Official Receipt</option><option value="Accomplishment Report">Accomplishment Report</option><option value="Incident Report">Incident Report</option><option value="Financial Report">Financial Report</option><option value="Progress Report">Progress Report</option><option value="Feasibility Study">Feasibility Study</option><option value="Audit Report">Audit Report</option><option value="Standard Operating Procedure (SOP)">Standard Operating Procedure (SOP)</option><option value="Employee Handbook">Employee Handbook</option><option value="Code of Conduct">Code of Conduct</option><option value="Policy Brief">Policy Brief</option></select></div>
+<div class="field"><label for="dateReceived">7. Date Submitted / Received</label><input type="date" id="dateReceived" required></div>
+<div class="field"><label for="dateCompleted">8. Date Completed / Replied</label><input type="date" id="dateCompleted"></div>
+<div class="field full"><label>9. Tagging (select all that apply)</label><div class="checks"><label><input type="checkbox" name="tag" value="RESOLVED">RESOLVED</label><label><input type="checkbox" name="tag" value="PENDING">PENDING</label><label><input type="checkbox" name="tag" value="CANCELLED">CANCELLED</label></div></div>
+<div class="field full"><label for="remarks">10. Remarks / Action Taken</label><textarea id="remarks" placeholder="Enter brief remarks, action taken, or relevant reference details"></textarea></div>
+</div>
+<div class="actions"><button class="primary" type="submit" id="submitBtn">Save Communication Record</button><button class="secondary" type="reset">Clear Form</button><button class="secondary" type="button" id="exportCsv">Export Register (CSV)</button><button class="secondary" type="button" onclick="window.print()">Print Register</button></div>
+<p class="note">Records are directly saved and synced with the central Google Apps Script Database.</p>
+</form>
+</section>
+<section class="panel">
+<h2 class="section-title">Communication Recording Matrix</h2>
+<div class="searchbar"><input id="search" type="search" placeholder="Search tracking number, unit, stakeholder, or type"><span id="recordCount" class="note">0 records</span></div>
+<div class="table-wrap"><table><thead><tr>
+<th>Department / Unit</th><th>Mode of Communication</th><th>Stakeholder</th><th>Communication Type</th><th>SLA</th><th>Information Type</th><th>Date Submitted / Received</th><th>Date Completed / Replied</th><th>Tagging</th><th>Remarks / Action Taken</th><th>Tracking Number</th>
+</tr></thead><tbody id="recordsBody"><tr><td colspan="11">Loading records from database...</td></tr></tbody></table></div>
+</section>
+<footer>Developed by: MVGFC Communication Control Office<br>© 2026<br>Powered by: Management Information System Office</footer>
+</div>
+<script>
+const API_URL = "https://script.google.com/macros/s/AKfycbxo_DTVNWJOf4PurXh7JIK0HnHaDhOkeM9gj9ajUL70J9jk1LrfgoEnypEUp_XoNnPQ/exec";
+let records = [];
+
+const $ = id => document.getElementById(id);
+
+function selectedChecks(name) {
+  return [...document.querySelectorAll('input[name="' + name + '"]:checked')].map(x => x.value);
+}
+
+function esc(s) {
+  return String(s ?? '').replace(/[&<>"']/g, c => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[c]));
+}
+
+function formatDate(val) {
+  if (!val) return '';
+  const d = new Date(val);
+  return isNaN(d) ? val : d.toISOString().split('T')[0];
+}
+
+async function loadDatabaseRecords() {
+  try {
+    const res = await fetch(API_URL, { redirect: "follow" });
+    const text = await res.text();
+    let result;
+    try {
+      result = JSON.parse(text);
+    } catch (e) {
+      console.error("Non-JSON response received:", text);
+      throw new Error("Server returned an invalid response. Check Apps Script authorization.");
+    }
+
+    if (result.status === 'success') {
+      records = result.data || [];
+      $('ticketPreview').textContent = result.nextTicket || 'CCO-CON-001';
+      renderTable();
+    } else {
+      $('recordsBody').innerHTML = `<tr><td colspan="11">Database Error: ${esc(result.message)}</td></tr>`;
+    }
+  } catch (err) {
+    console.error('Failed to load database:', err);
+    $('recordsBody').innerHTML = '<tr><td colspan="11">Unable to connect. Make sure you authorized the Apps Script.</td></tr>';
+  }
+}
+
+function renderTable() {
+  const q = $('search').value.toLowerCase().trim();
+  const shown = records.filter(r => JSON.stringify(r).toLowerCase().includes(q));
+  
+  $('recordCount').textContent = shown.length + ' record(s)' + (shown.length !== records.length ? ' shown' : '');
+  
+  $('recordsBody').innerHTML = shown.length ? shown.map(r => `<tr>
+    <td>${esc(r.department)}</td>
+    <td>${esc(Array.isArray(r.modes) ? r.modes.join(', ') : r.modes)}</td>
+    <td>${esc(r.stakeholder)}</td>
+    <td>${esc(r.commType)}</td>
+    <td>${esc(r.sla)}</td>
+    <td>${esc(r.infoType)}</td>
+    <td>${esc(formatDate(r.dateReceived))}</td>
+    <td>${esc(formatDate(r.dateCompleted))}</td>
+    <td>${(Array.isArray(r.tags) ? r.tags : [r.tags]).map(t => t ? `<span class="pill ${esc(t)}">${esc(t)}</span>` : '').join(' ')}</td>
+    <td>${esc(r.remarks)}</td>
+    <td><strong>${esc(r.ticket)}</strong></td>
+  </tr>`).join('') : '<tr><td colspan="11">No matching records found.</td></tr>';
+}
+
+$('recordForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const modes = selectedChecks('mode'), tags = selectedChecks('tag');
+  
+  if (!modes.length) { alert('Select at least one mode of communication.'); return; }
+  if (!tags.length) { alert('Select at least one tagging status.'); return; }
+  
+  const payload = {
+    department: $('department').value,
+    modes: modes,
+    stakeholder: $('stakeholder').value,
+    commType: $('commType').value,
+    sla: $('sla').value,
+    infoType: $('infoType').value,
+    dateReceived: $('dateReceived').value,
+    dateCompleted: $('dateCompleted').value,
+    tags: tags,
+    remarks: $('remarks').value.trim()
+  };
+
+  const btn = $('submitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Saving...';
+
+  try {
+    const res = await fetch(API_URL, {
+      method: 'POST',
+      redirect: "follow",
+      body: JSON.stringify(payload)
+    });
+    
+    const text = await res.text();
+    let result;
+    try {
+      result = JSON.parse(text);
+    } catch (err) {
+      throw new Error("Invalid server response: " + text);
+    }
+
+    btn.disabled = false;
+    btn.textContent = 'Save Communication Record';
+
+    if (result.status === 'success') {
+      alert('Record saved! Tracking Number: ' + result.trackingNumber);
+      e.target.reset();
+      loadDatabaseRecords();
+    } else {
+      alert('Error saving record: ' + (result.message || 'Unknown error'));
+    }
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = 'Save Communication Record';
+    alert('Failed to connect to Google Apps Script backend: ' + err.message);
+    console.error(err);
+  }
+});
+
+$('search').addEventListener('input', renderTable);
+
+function csvCell(v) { return '"' + String(v ?? '').replace(/"/g, '""') + '"'; }
+$('exportCsv').addEventListener('click', () => {
+  const headers = ['Department / Unit', 'Mode of Communication', 'Stakeholder', 'Communication Type', 'Service Level Agreement', 'Information Type', 'Date Submitted / Received', 'Date Completed / Replied', 'Tagging', 'Remarks / Action Taken', 'Tracking Number'];
+  const rows = records.map(r => [
+    r.department,
+    Array.isArray(r.modes) ? r.modes.join('; ') : r.modes,
+    r.stakeholder,
+    r.commType,
+    r.sla,
+    r.infoType,
+    formatDate(r.dateReceived),
+    formatDate(r.dateCompleted),
+    Array.isArray(r.tags) ? r.tags.join('; ') : r.tags,
+    r.remarks,
+    r.ticket
+  ]);
+  const csv = '\uFEFF' + [headers, ...rows].map(row => row.map(csvCell).join(',')).join('\r\n');
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' }), url = URL.createObjectURL(blob), a = document.createElement('a');
+  a.href = url; a.download = 'CCO_Communication_Register.csv'; a.click(); URL.revokeObjectURL(url);
+});
+
+loadDatabaseRecords();
+</script>
+</body>
+</html>
