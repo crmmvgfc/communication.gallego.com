@@ -8,317 +8,413 @@
 <title>Communication Control Transmittal System | MVGFC</title>
 
 <!-- MVGFC Browser Favicon -->
-<link rel="icon" type="image/png" href="https://mvgallego.edu.ph/assets/images/logo-192x192.png">
-<link rel="apple-touch-icon" href="https://mvgallego.edu.ph/assets/images/logo-192x192.png">
+<link rel="icon" type="image/png"
+href="https://mvgallego.edu.ph/assets/images/logo-192x192.png">
+<link rel="apple-touch-icon"
+href="https://mvgallego.edu.ph/assets/images/logo-192x192.png">
 
 <style>
-:root{
-  --green:#174b35;
-  --green2:#236346;
-  --gold:#c8a64b;
-  --gold-light:#f5edcf;
-  --ink:#203329;
-  --muted:#68776d;
-  --paper:#fff;
-  --bg:#f3f6f2;
-  --line:#dce5dc
+:root {
+  --green: #174b35;
+  --green2: #236346;
+  --gold: #c8a64b;
+  --gold-light: #f5edcf;
+  --ink: #203329;
+  --muted: #68776d;
+  --paper: #fff;
+  --bg: #f3f6f2;
+  --line: #dce5dc;
 }
 
-*{box-sizing:border-box}
-
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--ink);
-  font:15px/1.5 Arial,Helvetica,sans-serif
+* {
+  box-sizing: border-box;
 }
 
-.wrap{
-  max-width:1200px;
-  margin:28px auto;
-  padding:0 18px
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 15px/1.5 Arial, Helvetica, sans-serif;
 }
 
-.header{
-  background:linear-gradient(120deg,var(--green),#102f23);
-  color:#fff;
-  border-bottom:5px solid var(--gold);
-  border-radius:16px 16px 0 0;
-  padding:26px 30px;
-  display:flex;
-  align-items:center;
-  gap:20px
+.wrap {
+  max-width: 1200px;
+  margin: 28px auto;
+  padding: 0 18px;
 }
 
-.logo{
-  width:76px;
-  height:76px;
-  object-fit:contain;
-  background:#fff;
-  border-radius:12px;
-  padding:5px
+.header {
+  background: linear-gradient(120deg, var(--green), #102f23);
+  color: #fff;
+  border-bottom: 5px solid var(--gold);
+  border-radius: 16px 16px 0 0;
+  padding: 26px 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-h1{
-  font-size:clamp(21px,3vw,30px);
-  margin:0;
-  letter-spacing:.3px
+.logo {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 12px;
+  padding: 5px;
+  flex-shrink: 0;
 }
 
-.sub{
-  color:#e9e2c8;
-  margin:7px 0 0;
-  font-size:13px
+h1 {
+  font-size: clamp(21px, 3vw, 30px);
+  margin: 0;
+  letter-spacing: .3px;
 }
 
-.panel{
-  background:var(--paper);
-  padding:25px 28px;
-  border:1px solid var(--line);
-  box-shadow:0 8px 26px #153c2510
+.sub {
+  color: #e9e2c8;
+  margin: 7px 0 0;
+  font-size: 13px;
 }
 
-.section-title{
-  margin:0 0 18px;
-  color:var(--green);
-  font-size:18px;
-  border-left:4px solid var(--gold);
-  padding-left:11px
+.panel {
+  background: var(--paper);
+  padding: 25px 28px;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 26px #153c2510;
 }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:16px 20px
+.section-title {
+  margin: 0 0 18px;
+  color: var(--green);
+  font-size: 18px;
+  border-left: 4px solid var(--gold);
+  padding-left: 11px;
 }
 
-.field{
-  display:flex;
-  flex-direction:column;
-  gap:6px
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 20px;
 }
 
-.field.full{grid-column:1/-1}
-
-label{
-  font-weight:700;
-  font-size:13px;
-  color:#354b3d
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
 }
 
-input,select,textarea{
-  width:100%;
-  border:1px solid #cbd8cd;
-  border-radius:8px;
-  padding:11px 12px;
-  background:#fff;
-  color:var(--ink);
-  font:inherit;
-  min-height:43px
+.field.full {
+  grid-column: 1 / -1;
 }
 
-input:focus,select:focus,textarea:focus{
-  outline:2px solid #c8a64b66;
-  border-color:var(--gold)
+label {
+  font-weight: 700;
+  font-size: 13px;
+  color: #354b3d;
 }
 
-textarea{
-  min-height:82px;
-  resize:vertical
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid #cbd8cd;
+  border-radius: 8px;
+  padding: 11px 12px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  min-height: 43px;
 }
 
-.checks{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:8px 14px;
-  padding:11px;
-  border:1px solid var(--line);
-  border-radius:8px;
-  background:#fbfcfa
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #c8a64b66;
+  border-color: var(--gold);
 }
 
-.checks label{
-  font-weight:400;
-  display:flex;
-  align-items:flex-start;
-  gap:8px
+textarea {
+  min-height: 82px;
+  resize: vertical;
 }
 
-.checks input{
-  width:auto;
-  min-height:auto;
-  margin-top:3px;
-  accent-color:var(--green)
+.checks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 14px;
+  padding: 11px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfa;
 }
 
-.actions{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:22px
+.checks label {
+  font-weight: 400;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
 }
 
-button{
-  border:0;
-  border-radius:8px;
-  padding:11px 17px;
-  font-weight:700;
-  cursor:pointer
+.checks input {
+  width: auto;
+  min-height: auto;
+  margin-top: 3px;
+  accent-color: var(--green);
 }
 
-button:disabled{
-  opacity:0.6;
-  cursor:not-allowed
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 22px;
 }
 
-.primary{
-  background:var(--green);
-  color:white
+button {
+  border: 0;
+  border-radius: 8px;
+  padding: 11px 17px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 13px;
 }
 
-.secondary{
-  background:var(--gold-light);
-  color:#4d3c0d;
-  border:1px solid var(--gold)
+button:disabled {
+  opacity: .6;
+  cursor: not-allowed;
 }
 
-.danger{
-  background:#f8e8e5;
-  color:#8a2c20
+.primary {
+  background: var(--green);
+  color: white;
 }
 
-button:hover:not(:disabled){filter:brightness(.96)}
-
-.ticket{
-  background:#f7f3e5;
-  border:1px dashed var(--gold);
-  border-radius:8px;
-  padding:10px 12px;
-  font-weight:700;
-  color:var(--green);
-  letter-spacing:.4px
+.secondary {
+  background: var(--gold-light);
+  color: #4d3c0d;
+  border: 1px solid var(--gold);
 }
 
-.table-wrap{
-  overflow:auto;
-  border:1px solid var(--line);
-  border-radius:10px
+.danger {
+  background: #f8e8e5;
+  color: #8a2c20;
 }
 
-table{
-  border-collapse:collapse;
-  width:100%;
-  min-width:1100px;
-  font-size:13px
+button:hover:not(:disabled) {
+  filter: brightness(.96);
 }
 
-th{
-  background:var(--green);
-  color:#fff;
-  text-align:left;
-  padding:11px;
-  white-space:nowrap
+.ticket {
+  background: #f7f3e5;
+  border: 1px dashed var(--gold);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-weight: 700;
+  color: var(--green);
+  letter-spacing: .4px;
+  min-height: 43px;
+  overflow-wrap: anywhere;
 }
 
-td{
-  padding:10px;
-  border-bottom:1px solid var(--line);
-  vertical-align:top
+.ticket-note {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 5px;
+  font-weight: 400;
 }
 
-tr:nth-child(even) td{background:#f8faf7}
-
-.pill{
-  display:inline-block;
-  border-radius:20px;
-  padding:3px 8px;
-  font-size:11px;
-  font-weight:700;
-  background:#edf2ed
+.table-wrap {
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
 }
 
-.pill.RESOLVED{
-  background:#e0f1e5;
-  color:#1c6539
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 1100px;
+  font-size: 13px;
 }
 
-.pill.PENDING{
-  background:#fff2ce;
-  color:#795a00
+th {
+  background: var(--green);
+  color: #fff;
+  text-align: left;
+  padding: 11px;
+  white-space: nowrap;
 }
 
-.pill.CANCELLED{
-  background:#f8e2df;
-  color:#8b2d23
+td {
+  padding: 10px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
 }
 
-.searchbar{
-  display:flex;
-  gap:10px;
-  align-items:center;
-  margin:0 0 12px
+tr:nth-child(even) td {
+  background: #f8faf7;
 }
 
-.searchbar input{max-width:360px}
-
-footer{
-  text-align:center;
-  color:#66766b;
-  font-size:12px;
-  padding:20px 10px 28px
+.pill {
+  display: inline-block;
+  border-radius: 20px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  background: #edf2ed;
+  margin: 2px;
 }
 
-.note{
-  color:var(--muted);
-  font-size:12px;
-  margin-top:10px
+.pill.RESOLVED {
+  background: #e0f1e5;
+  color: #1c6539;
 }
 
-.other-field{
-  display:none;
-  margin-top:10px
+.pill.PENDING {
+  background: #fff2ce;
+  color: #795a00;
 }
 
-@media(max-width:700px){
-  .header{
-    padding:20px;
-    align-items:flex-start
+.pill.CANCELLED {
+  background: #f8e2df;
+  color: #8b2d23;
+}
+
+.searchbar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 0 12px;
+}
+
+.searchbar input {
+  max-width: 420px;
+}
+
+footer {
+  text-align: center;
+  color: #66766b;
+  font-size: 12px;
+  padding: 20px 10px 28px;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.other-field {
+  display: none;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.status-message {
+  display: none;
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin-top: 15px;
+  font-size: 13px;
+}
+
+.status-message.success {
+  display: block;
+  background: #e0f1e5;
+  color: #1c6539;
+  border: 1px solid #b8d9c0;
+}
+
+.status-message.error {
+  display: block;
+  background: #f8e2df;
+  color: #8b2d23;
+  border: 1px solid #e8c1bc;
+}
+
+.status-message.info {
+  display: block;
+  background: #edf2ed;
+  color: var(--green);
+  border: 1px solid var(--line);
+}
+
+@media(max-width:700px) {
+  .header {
+    padding: 20px;
+    align-items: flex-start;
   }
 
-  .logo{
-    width:58px;
-    height:58px
+  .logo {
+    width: 58px;
+    height: 58px;
   }
 
-  .panel{padding:20px 16px}
+  .panel {
+    padding: 20px 16px;
+  }
 
-  .grid{grid-template-columns:1fr}
+  .grid {
+    grid-template-columns: 1fr;
+  }
 
-  .field.full{grid-column:auto}
+  .field.full {
+    grid-column: auto;
+  }
 
-  .checks{grid-template-columns:1fr}
+  .checks {
+    grid-template-columns: 1fr;
+  }
 
-  .wrap{
-    margin:12px auto;
-    padding:0 10px
+  .wrap {
+    margin: 12px auto;
+    padding: 0 10px;
+  }
+
+  .searchbar input {
+    max-width: 100%;
   }
 }
 
-@media print{
-  body{background:white}
-  .wrap{margin:0;max-width:100%}
-  .header{
-    border-radius:0;
-    print-color-adjust:exact;
-    -webkit-print-color-adjust:exact
+@media print {
+  body {
+    background: white;
   }
-  .actions,.searchbar{display:none!important}
-  .panel{box-shadow:none}
-  .table-wrap{overflow:visible}
-  table{min-width:100%;font-size:9px}
-  th{
-    print-color-adjust:exact;
-    -webkit-print-color-adjust:exact
+
+  .wrap {
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .header {
+    border-radius: 0;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .actions,
+  .searchbar,
+  #recordForm,
+  .status-message {
+    display: none !important;
+  }
+
+  .panel {
+    box-shadow: none;
+  }
+
+  .table-wrap {
+    overflow: visible;
+  }
+
+  table {
+    min-width: 100%;
+    font-size: 9px;
+  }
+
+  th {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
   }
 }
 </style>
@@ -328,7 +424,12 @@ footer{
 
 <div class="wrap">
 
+<!-- =====================================================
+     INSTITUTIONAL HEADER
+===================================================== -->
+
 <header class="header">
+
   <img
     class="logo"
     src="https://mvgallego.edu.ph/assets/images/logo-192x192.png"
@@ -337,13 +438,18 @@ footer{
 
   <div>
     <h1>COMMUNICATION CONTROL TRANSMITTAL SYSTEM</h1>
+
     <p class="sub">
       Maintained and Controlled by CCO - Communication Control Information Dissemination Office
     </p>
   </div>
+
 </header>
 
-<!-- COMMUNICATION RECORD ENTRY -->
+
+<!-- =====================================================
+     COMMUNICATION RECORD ENTRY
+===================================================== -->
 
 <section class="panel">
 
@@ -353,15 +459,19 @@ footer{
 
 <div class="grid">
 
+
 <!-- 1. DEPARTMENT / UNIT -->
 
 <div class="field">
+
 <label for="department">1. Department / Unit</label>
 
 <select id="department" required>
+
 <option value="">Select department / unit</option>
 
 <optgroup label="Executive Leadership, Governance, and Institutional Management">
+
 <option value="Board of Trustees">Board of Trustees</option>
 <option value="Office of the President">Office of the President</option>
 <option value="Internal Audit Office">Internal Audit Office</option>
@@ -374,9 +484,11 @@ footer{
 <option value="Communications Control Office">Communications Control Office</option>
 <option value="Customer Relationship Management Unit">Customer Relationship Management Unit</option>
 <option value="Communication Dissemination Management Unit">Communication Dissemination Management Unit</option>
+
 </optgroup>
 
 <optgroup label="Academic Affairs Division">
+
 <option value="Higher Education – Office of the Director of Instruction">Higher Education – Office of the Director of Instruction</option>
 <option value="Institute of Teacher Education">Institute of Teacher Education</option>
 <option value="Institute of Criminal Justice Education">Institute of Criminal Justice Education</option>
@@ -385,9 +497,11 @@ footer{
 <option value="Institute of Nursing and Allied Health Sciences">Institute of Nursing and Allied Health Sciences</option>
 <option value="Basic Education – Office of the High School Principal">Basic Education – Office of the High School Principal</option>
 <option value="Technical-Vocational Education – Office of the TechVoc Head">Technical-Vocational Education – Office of the TechVoc Head</option>
+
 </optgroup>
 
 <optgroup label="Academic Support Services Division">
+
 <option value="Office of the Registrar">Office of the Registrar</option>
 <option value="Research and Development Office">Research and Development Office</option>
 <option value="Community Extension and Outreach Program Office">Community Extension and Outreach Program Office</option>
@@ -400,9 +514,11 @@ footer{
 <option value="Guidance and Testing Unit">Guidance and Testing Unit</option>
 <option value="Clinic/Student Health Services Unit">Clinic/Student Health Services Unit</option>
 <option value="Career Development and Employability Center">Career Development and Employability Center</option>
+
 </optgroup>
 
 <optgroup label="Administrative Services Division">
+
 <option value="Administrative Services Office">Administrative Services Office</option>
 <option value="Human Resource Office">Human Resource Office</option>
 <option value="Records Management Office">Records Management Office</option>
@@ -412,17 +528,46 @@ footer{
 <option value="Purchasing Office">Purchasing Office</option>
 <option value="Security and Safety Office">Security and Safety Office</option>
 <option value="Canteen Services Unit">Canteen Services Unit</option>
+
 </optgroup>
 
+<option value="Others">Others (specify)</option>
+
 </select>
+
+<div class="field other-field" id="departmentOtherField">
+
+<label for="departmentOther">
+Specify Other Department / Unit
+</label>
+
+<input
+  type="text"
+  id="departmentOther"
+  placeholder="Enter other department or unit"
+>
+
 </div>
+
+</div>
+
 
 <!-- 11. TRACKING NUMBER -->
 
 <div class="field">
+
 <label>11. Tracking Number</label>
-<div class="ticket" id="ticketPreview">Loading...</div>
+
+<div class="ticket" id="ticketPreview">
+Generating tracking number...
 </div>
+
+<div class="ticket-note">
+Automatically generated preview. The official tracking number is assigned by the Google Sheets database upon submission.
+</div>
+
+</div>
+
 
 <!-- 2. MODE OF COMMUNICATION -->
 
@@ -459,15 +604,21 @@ footer{
 </div>
 
 <div class="field other-field" id="modeOtherField">
-<label for="modeOther">Specify Other Mode of Communication</label>
+
+<label for="modeOther">
+Specify Other Mode of Communication
+</label>
+
 <input
   type="text"
   id="modeOther"
   placeholder="Enter other communication mode"
 >
+
 </div>
 
 </div>
+
 
 <!-- 3. STAKEHOLDER -->
 
@@ -487,6 +638,7 @@ footer{
 <option value="Students">Students</option>
 
 <optgroup label="Executive Leadership, Governance, and Institutional Management">
+
 <option value="Board of Trustees">Board of Trustees</option>
 <option value="Office of the President">Office of the President</option>
 <option value="Internal Audit Office">Internal Audit Office</option>
@@ -499,9 +651,11 @@ footer{
 <option value="Communications Control Office">Communications Control Office</option>
 <option value="Customer Relationship Management Unit">Customer Relationship Management Unit</option>
 <option value="Communication Dissemination Management Unit">Communication Dissemination Management Unit</option>
+
 </optgroup>
 
 <optgroup label="Academic Affairs Division">
+
 <option value="Higher Education – Office of the Director of Instruction">Higher Education – Office of the Director of Instruction</option>
 <option value="Institute of Teacher Education">Institute of Teacher Education</option>
 <option value="Institute of Criminal Justice Education">Institute of Criminal Justice Education</option>
@@ -510,9 +664,11 @@ footer{
 <option value="Institute of Nursing and Allied Health Sciences">Institute of Nursing and Allied Health Sciences</option>
 <option value="Basic Education – Office of the High School Principal">Basic Education – Office of the High School Principal</option>
 <option value="Technical-Vocational Education – Office of the TechVoc Head">Technical-Vocational Education – Office of the TechVoc Head</option>
+
 </optgroup>
 
 <optgroup label="Academic Support Services Division">
+
 <option value="Office of the Registrar">Office of the Registrar</option>
 <option value="Research and Development Office">Research and Development Office</option>
 <option value="Community Extension and Outreach Program Office">Community Extension and Outreach Program Office</option>
@@ -525,9 +681,11 @@ footer{
 <option value="Guidance and Testing Unit">Guidance and Testing Unit</option>
 <option value="Clinic/Student Health Services Unit">Clinic/Student Health Services Unit</option>
 <option value="Career Development and Employability Center">Career Development and Employability Center</option>
+
 </optgroup>
 
 <optgroup label="Administrative Services Division">
+
 <option value="Administrative Services Office">Administrative Services Office</option>
 <option value="Human Resource Office">Human Resource Office</option>
 <option value="Records Management Office">Records Management Office</option>
@@ -537,6 +695,7 @@ footer{
 <option value="Purchasing Office">Purchasing Office</option>
 <option value="Security and Safety Office">Security and Safety Office</option>
 <option value="Canteen Services Unit">Canteen Services Unit</option>
+
 </optgroup>
 
 <option value="Others">Others (specify)</option>
@@ -544,50 +703,99 @@ footer{
 </select>
 
 <div class="field other-field" id="stakeholderOtherField">
-<label for="stakeholderOther">Specify Other Stakeholder</label>
+
+<label for="stakeholderOther">
+Specify Other Stakeholder
+</label>
+
 <input
   type="text"
   id="stakeholderOther"
   placeholder="Enter other stakeholder"
 >
+
 </div>
 
 </div>
+
 
 <!-- 4. COMMUNICATION TYPE -->
 
 <div class="field">
+
 <label for="commType">4. Communication Type</label>
 
 <select id="commType" required>
+
 <option value="">Select type</option>
 <option value="Incoming">Incoming</option>
 <option value="Outgoing">Outgoing</option>
+<option value="Others">Others (specify)</option>
+
 </select>
+
+<div class="field other-field" id="commTypeOtherField">
+
+<label for="commTypeOther">
+Specify Other Communication Type
+</label>
+
+<input
+  type="text"
+  id="commTypeOther"
+  placeholder="Enter communication type"
+>
+
 </div>
 
-<!-- 5. SLA -->
+</div>
+
+
+<!-- 5. SERVICE LEVEL AGREEMENT -->
 
 <div class="field">
+
 <label for="sla">5. Service Level Agreement</label>
 
 <select id="sla" required>
+
 <option value="">Select service level</option>
 <option value="within 24 Hours">within 24 Hours</option>
 <option value="2-3 business days">2-3 business days</option>
 <option value="5 calendar days">5 calendar days</option>
 <option value="7 business days">7 business days</option>
 <option value="More than 7 business days">More than 7 business days</option>
+<option value="Others">Others (specify)</option>
+
 </select>
+
+<div class="field other-field" id="slaOtherField">
+
+<label for="slaOther">
+Specify Other Service Level Agreement
+</label>
+
+<input
+  type="text"
+  id="slaOther"
+  placeholder="Enter agreed service level"
+>
+
 </div>
+
+</div>
+
 
 <!-- 6. INFORMATION TYPE -->
 
 <div class="field">
+
 <label for="infoType">6. Information Type</label>
 
 <select id="infoType" required>
+
 <option value="">Select information type</option>
+
 <option value="MEMO">MEMO</option>
 <option value="INFORMATION ANNOUNCEMENT">INFORMATION ANNOUNCEMENT</option>
 <option value="REQUEST/ REQUISITION">REQUEST/ REQUISITION</option>
@@ -621,23 +829,56 @@ footer{
 <option value="Employee Handbook">Employee Handbook</option>
 <option value="Code of Conduct">Code of Conduct</option>
 <option value="Policy Brief">Policy Brief</option>
-  <option value="Others">Others (specify)</option>
+
+<option value="Others">Others (specify)</option>
+
 </select>
+
+<div class="field other-field" id="infoTypeOtherField">
+
+<label for="infoTypeOther">
+Specify Other Information Type
+</label>
+
+<input
+  type="text"
+  id="infoTypeOther"
+  placeholder="Enter information or document type"
+>
+
 </div>
 
-<!-- 7. DATE RECEIVED -->
+</div>
+
+
+<!-- 7. DATE SUBMITTED / RECEIVED -->
 
 <div class="field">
+
 <label for="dateReceived">7. Date Submitted / Received</label>
-<input type="date" id="dateReceived" required>
+
+<input
+  type="date"
+  id="dateReceived"
+  required
+>
+
 </div>
 
-<!-- 8. DATE COMPLETED -->
+
+<!-- 8. DATE COMPLETED / REPLIED -->
 
 <div class="field">
+
 <label for="dateCompleted">8. Date Completed / Replied</label>
-<input type="date" id="dateCompleted">
+
+<input
+  type="date"
+  id="dateCompleted"
+>
+
 </div>
+
 
 <!-- 9. TAGGING -->
 
@@ -647,27 +888,60 @@ footer{
 
 <div class="checks">
 
-<label><input type="checkbox" name="tag" value="RESOLVED">RESOLVED</label>
+<label>
+<input type="checkbox" name="tag" value="RESOLVED">
+RESOLVED
+</label>
 
-<label><input type="checkbox" name="tag" value="PENDING">PENDING</label>
+<label>
+<input type="checkbox" name="tag" value="PENDING">
+PENDING
+</label>
 
-<label><input type="checkbox" name="tag" value="CANCELLED">CANCELLED</label>
+<label>
+<input type="checkbox" name="tag" value="CANCELLED">
+CANCELLED
+</label>
+
+<label>
+<input type="checkbox" name="tag" value="Others">
+Others (specify)
+</label>
 
 </div>
+
+<div class="field other-field" id="tagOtherField">
+
+<label for="tagOther">
+Specify Other Tagging Status
+</label>
+
+<input
+  type="text"
+  id="tagOther"
+  placeholder="Enter other tagging status"
+>
+
 </div>
+
+</div>
+
 
 <!-- 10. REMARKS -->
 
 <div class="field full">
+
 <label for="remarks">10. Remarks / Action Taken</label>
 
 <textarea
   id="remarks"
   placeholder="Enter brief remarks, action taken, or relevant reference details"
 ></textarea>
+
 </div>
 
 </div>
+
 
 <!-- ACTION BUTTONS -->
 
@@ -685,24 +959,32 @@ Clear Form
 Export Register (CSV)
 </button>
 
-<button class="secondary" type="button" onclick="window.print()">
+<button class="secondary" type="button" id="printRegister">
 Print Register
 </button>
 
 </div>
 
+<div id="statusMessage" class="status-message"></div>
+
 <p class="note">
-Records are directly saved and synced with the central Google Apps Script Database.
+Records are directly saved and synchronized with the central Google Apps Script Database.
 </p>
 
 </form>
+
 </section>
 
-<!-- COMMUNICATION RECORDING MATRIX -->
+
+<!-- =====================================================
+     COMMUNICATION RECORDING MATRIX
+===================================================== -->
 
 <section class="panel">
 
-<h2 class="section-title">Communication Recording Matrix</h2>
+<h2 class="section-title">
+Communication Recording Matrix
+</h2>
 
 <div class="searchbar">
 
@@ -712,7 +994,13 @@ Records are directly saved and synced with the central Google Apps Script Databa
   placeholder="Search tracking number, unit, stakeholder, or type"
 >
 
-<span id="recordCount" class="note">0 records</span>
+<span id="recordCount" class="note">
+0 records
+</span>
+
+<button class="secondary" type="button" id="refreshRecords">
+Refresh Records
+</button>
 
 </div>
 
@@ -721,6 +1009,7 @@ Records are directly saved and synced with the central Google Apps Script Databa
 <table>
 
 <thead>
+
 <tr>
 <th>Department / Unit</th>
 <th>Mode of Communication</th>
@@ -734,36 +1023,58 @@ Records are directly saved and synced with the central Google Apps Script Databa
 <th>Remarks / Action Taken</th>
 <th>Tracking Number</th>
 </tr>
+
 </thead>
 
 <tbody id="recordsBody">
+
 <tr>
 <td colspan="11">Loading records from database...</td>
 </tr>
+
 </tbody>
 
 </table>
+
 </div>
 
 </section>
 
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
+
 Developed by: MVGFC Communication Control Office
+
 <br>
+
 © 2026
+
 <br>
+
 Powered by: Management Information System Office
+
 </footer>
 
 </div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script>
 
 // =====================================================
 // GOOGLE APPS SCRIPT DATABASE CONNECTION
+// UPDATED WEB APP URL
 // =====================================================
 
-const API_URL = "https://script.google.com/macros/s/AKfycbxo_DTVNWJOf4PurXh7JIK0HnHaDhOkeM9gj9ajUL70J9jk1LrfgoEnypEUp_XoNnPQ/exec";
+const API_URL =
+"https://script.google.com/macros/s/AKfycbx97giTmQ8sj-S6C7LrQaPEdl_KrE6pMsHkFhSpV19axfpTBLOkhQl1AM-XmjO8IX4u/exec";
 
 let records = [];
 
@@ -771,13 +1082,17 @@ const $ = id => document.getElementById(id);
 
 
 // =====================================================
-// CHECKBOX SELECTION
+// SELECTED CHECKBOXES
 // =====================================================
 
 function selectedChecks(name) {
-  return [...document.querySelectorAll(
-    'input[name="' + name + '"]:checked'
-  )].map(x => x.value);
+
+  return [
+    ...document.querySelectorAll(
+      'input[name="' + name + '"]:checked'
+    )
+  ].map(x => x.value);
+
 }
 
 
@@ -785,90 +1100,311 @@ function selectedChecks(name) {
 // HTML ESCAPING
 // =====================================================
 
-function esc(s) {
-  return String(s ?? '').replace(/[&<>"']/g, c => ({
+function esc(value) {
+
+  return String(value ?? '').replace(/[&<>"']/g, char => ({
+
     '&': '&amp;',
     '<': '&lt;',
     '>': '&gt;',
     '"': '&quot;',
     "'": '&#39;'
-  }[c]));
+
+  }[char]));
+
 }
 
 
 // =====================================================
-// DATE FORMATTING
+// LOCAL DATE HELPERS
 // =====================================================
 
-function formatDate(val) {
-  if (!val) return '';
+function getLocalDateString() {
 
-  const d = new Date(val);
+  const today = new Date();
 
-  return isNaN(d)
-    ? val
-    : d.toISOString().split('T')[0];
+  const year = today.getFullYear();
+
+  const month = String(
+    today.getMonth() + 1
+  ).padStart(2, '0');
+
+  const day = String(
+    today.getDate()
+  ).padStart(2, '0');
+
+  return `${year}-${month}-${day}`;
+
+}
+
+
+function formatDate(value) {
+
+  if (!value) return '';
+
+  if (typeof value === 'string') {
+
+    const match = value.match(/^(\d{4}-\d{2}-\d{2})/);
+
+    if (match) return match[1];
+
+  }
+
+  const date = new Date(value);
+
+  if (isNaN(date.getTime())) {
+    return String(value);
+  }
+
+  return [
+    date.getFullYear(),
+    String(date.getMonth() + 1).padStart(2, '0'),
+    String(date.getDate()).padStart(2, '0')
+  ].join('-');
+
 }
 
 
 // =====================================================
-// CONDITIONAL OTHER FIELDS
+// CONDITIONAL OTHERS FIELDS
 // =====================================================
 
-function toggleOtherField(control, field, input, isSelected) {
-  const selected = isSelected();
-  $(field).style.display = selected ? 'flex' : 'none';
-  $(input).required = selected;
-  if (!selected) $(input).value = '';
+function toggleOtherField(fieldId, inputId, isSelected) {
+
+  const field = $(fieldId);
+
+  const input = $(inputId);
+
+  if (!field || !input) return;
+
+  field.style.display = isSelected ? 'flex' : 'none';
+
+  input.required = isSelected;
+
+  if (!isSelected) {
+    input.value = '';
+  }
+
 }
+
+
+// =====================================================
+// DROPDOWN OTHER FIELD LISTENERS
+// =====================================================
 
 const otherSelects = [
-  ['department', 'departmentOtherField', 'departmentOther'],
-  ['stakeholder', 'stakeholderOtherField', 'stakeholderOther'],
-  ['commType', 'commTypeOtherField', 'commTypeOther'],
-  ['sla', 'slaOtherField', 'slaOther'],
-  ['infoType', 'infoTypeOtherField', 'infoTypeOther']
+
+  [
+    'department',
+    'departmentOtherField',
+    'departmentOther'
+  ],
+
+  [
+    'stakeholder',
+    'stakeholderOtherField',
+    'stakeholderOther'
+  ],
+
+  [
+    'commType',
+    'commTypeOtherField',
+    'commTypeOther'
+  ],
+
+  [
+    'sla',
+    'slaOtherField',
+    'slaOther'
+  ],
+
+  [
+    'infoType',
+    'infoTypeOtherField',
+    'infoTypeOther'
+  ]
+
 ];
 
-otherSelects.forEach(([control, field, input]) => {
-  const update = () => toggleOtherField(
-    control, field, input, () => $(control).value === 'Others'
-  );
-  $(control).addEventListener('change', update);
-  update();
-});
+
+function initializeOtherSelects() {
+
+  otherSelects.forEach(([control, field, input]) => {
+
+    const update = () => {
+
+      toggleOtherField(
+        field,
+        input,
+        $(control).value === 'Others'
+      );
+
+    };
+
+    $(control).addEventListener('change', update);
+
+    update();
+
+  });
+
+}
+
+
+// =====================================================
+// MODE OTHER FIELD
+// =====================================================
 
 function updateModeOtherField() {
+
   toggleOtherField(
-    'mode', 'modeOtherField', 'modeOther',
-    () => selectedChecks('mode').includes('Others')
+    'modeOtherField',
+    'modeOther',
+    selectedChecks('mode').includes('Others')
   );
+
 }
+
+
+// =====================================================
+// TAG OTHER FIELD
+// =====================================================
 
 function updateTagOtherField() {
+
   toggleOtherField(
-    'tag', 'tagOtherField', 'tagOther',
-    () => selectedChecks('tag').includes('Others')
+    'tagOtherField',
+    'tagOther',
+    selectedChecks('tag').includes('Others')
   );
+
 }
 
-document.querySelectorAll('input[name="mode"]').forEach(check =>
-  check.addEventListener('change', updateModeOtherField)
-);
-document.querySelectorAll('input[name="tag"]').forEach(check =>
-  check.addEventListener('change', updateTagOtherField)
+
+document.querySelectorAll('input[name="mode"]').forEach(check => {
+
+  check.addEventListener(
+    'change',
+    updateModeOtherField
+  );
+
+});
+
+
+document.querySelectorAll('input[name="tag"]').forEach(check => {
+
+  check.addEventListener(
+    'change',
+    updateTagOtherField
+  );
+
+});
+
+
+// =====================================================
+// TRACKING NUMBER GENERATOR - FRONTEND PREVIEW
+// FORMAT: CCO-CON-YYYYMMDD-001
+//
+// The official tracking number is generated by
+// Google Apps Script when the record is submitted.
+// =====================================================
+
+function getDateStamp(dateValue) {
+
+  const value = dateValue || getLocalDateString();
+
+  return value.replace(/-/g, '');
+
+}
+
+
+function generateTrackingNumber() {
+
+  const dateStamp = getDateStamp(
+    $('dateReceived').value
+  );
+
+  const prefix = `CCO-CON-${dateStamp}-`;
+
+  let highestNumber = 0;
+
+  records.forEach(record => {
+
+    const ticket = String(
+      record.ticket || ''
+    ).trim();
+
+    if (ticket.startsWith(prefix)) {
+
+      const sequence = ticket.substring(
+        prefix.length
+      );
+
+      if (/^\d+$/.test(sequence)) {
+
+        const number = parseInt(sequence, 10);
+
+        if (number > highestNumber) {
+          highestNumber = number;
+        }
+
+      }
+
+    }
+
+  });
+
+  const nextNumber = String(
+    highestNumber + 1
+  ).padStart(3, '0');
+
+  return prefix + nextNumber;
+
+}
+
+
+// =====================================================
+// UPDATE TRACKING NUMBER PREVIEW
+// =====================================================
+
+function updateTicketPreview() {
+
+  $('ticketPreview').textContent =
+    generateTrackingNumber();
+
+}
+
+
+$('dateReceived').addEventListener(
+  'change',
+  updateTicketPreview
 );
 
-// Reset conditional fields after clearing the form.
-$('recordForm').addEventListener('reset', () => {
-  setTimeout(() => {
-    otherSelects.forEach(([control, field, input]) => {
-      toggleOtherField(control, field, input, () => $(control).value === 'Others');
-    });
-    updateModeOtherField();
-    updateTagOtherField();
-  }, 0);
-});
+
+// =====================================================
+// STATUS MESSAGE
+// =====================================================
+
+function showStatus(message, type) {
+
+  const status = $('statusMessage');
+
+  status.className = 'status-message ' + type;
+
+  status.textContent = message;
+
+}
+
+
+function clearStatus() {
+
+  const status = $('statusMessage');
+
+  status.className = 'status-message';
+
+  status.textContent = '';
+
+}
+
 
 // =====================================================
 // LOAD DATABASE RECORDS
@@ -876,62 +1412,85 @@ $('recordForm').addEventListener('reset', () => {
 
 async function loadDatabaseRecords() {
 
+  $('recordsBody').innerHTML = `
+    <tr>
+      <td colspan="11">Loading records from database...</td>
+    </tr>
+  `;
+
   try {
 
-    const res = await fetch(API_URL, {
-      redirect: "follow"
+    const response = await fetch(API_URL, {
+      method: 'GET',
+      redirect: 'follow',
+      cache: 'no-store'
     });
 
-    const text = await res.text();
+    if (!response.ok) {
+
+      throw new Error(
+        'HTTP Error: ' + response.status
+      );
+
+    }
+
+    const responseText = await response.text();
 
     let result;
 
     try {
 
-      result = JSON.parse(text);
+      result = JSON.parse(responseText);
 
-    } catch (e) {
+    } catch (error) {
 
-      console.error("Non-JSON response received:", text);
+      console.error(
+        'Invalid database response:',
+        responseText
+      );
 
       throw new Error(
-        "Server returned an invalid response. Check Apps Script authorization."
+        'The database returned an invalid response.'
       );
 
     }
 
     if (result.status === 'success') {
 
-      records = result.data || [];
-
-      $('ticketPreview').textContent =
-        result.nextTicket || 'CCO-CON-001';
+      records = Array.isArray(result.data)
+        ? result.data
+        : [];
 
       renderTable();
 
+      updateTicketPreview();
+
     } else {
 
-      $('recordsBody').innerHTML = `
-        <tr>
-          <td colspan="11">
-            Database Error: ${esc(result.message)}
-          </td>
-        </tr>
-      `;
+      throw new Error(
+        result.message || 'Database returned an error.'
+      );
 
     }
 
-  } catch (err) {
+  } catch (error) {
 
-    console.error('Failed to load database:', err);
+    console.error(
+      'Failed to load database:',
+      error
+    );
 
     $('recordsBody').innerHTML = `
       <tr>
         <td colspan="11">
-          Unable to connect. Make sure you authorized the Apps Script.
+          Unable to load database records.
+          Please check the Apps Script deployment and authorization.
         </td>
       </tr>
     `;
+
+    $('recordCount').textContent =
+      'Database connection error';
 
   }
 
@@ -944,285 +1503,499 @@ async function loadDatabaseRecords() {
 
 function renderTable() {
 
-  const q = $('search').value.toLowerCase().trim();
+  const query = $('search').value
+    .toLowerCase()
+    .trim();
 
-  const shown = records.filter(r =>
-    JSON.stringify(r).toLowerCase().includes(q)
-  );
+  const shown = records.filter(record => {
+
+    return JSON.stringify(record)
+      .toLowerCase()
+      .includes(query);
+
+  });
 
   $('recordCount').textContent =
     shown.length + ' record(s)' +
-    (shown.length !== records.length ? ' shown' : '');
+    (
+      shown.length !== records.length
+        ? ' shown'
+        : ''
+    );
 
-  $('recordsBody').innerHTML = shown.length
 
-    ? shown.map(r => `
+  if (!shown.length) {
 
+    $('recordsBody').innerHTML = `
       <tr>
-
-        <td>${esc(r.department)}</td>
-
-        <td>${esc(
-          Array.isArray(r.modes)
-            ? r.modes.join(', ')
-            : r.modes
-        )}</td>
-
-        <td>${esc(r.stakeholder)}</td>
-
-        <td>${esc(r.commType)}</td>
-
-        <td>${esc(r.sla)}</td>
-
-        <td>${esc(r.infoType)}</td>
-
-        <td>${esc(formatDate(r.dateReceived))}</td>
-
-        <td>${esc(formatDate(r.dateCompleted))}</td>
-
-        <td>
-          ${(Array.isArray(r.tags) ? r.tags : [r.tags])
-            .map(t => t
-              ? `<span class="pill ${esc(t)}">${esc(t)}</span>`
-              : ''
-            ).join(' ')}
+        <td colspan="11">
+          No matching records found.
         </td>
-
-        <td>${esc(r.remarks)}</td>
-
-        <td><strong>${esc(r.ticket)}</strong></td>
-
-      </tr>
-
-    `).join('')
-
-    : `
-      <tr>
-        <td colspan="11">No matching records found.</td>
       </tr>
     `;
 
+    return;
+
+  }
+
+
+  $('recordsBody').innerHTML = shown.map(record => {
+
+    const modes = Array.isArray(record.modes)
+      ? record.modes.join(', ')
+      : record.modes;
+
+    const tags = Array.isArray(record.tags)
+      ? record.tags
+      : (record.tags ? [record.tags] : []);
+
+
+    return `
+
+      <tr>
+
+        <td>${esc(record.department)}</td>
+
+        <td>${esc(modes)}</td>
+
+        <td>${esc(record.stakeholder)}</td>
+
+        <td>${esc(record.commType)}</td>
+
+        <td>${esc(record.sla)}</td>
+
+        <td>${esc(record.infoType)}</td>
+
+        <td>${esc(formatDate(record.dateReceived))}</td>
+
+        <td>${esc(formatDate(record.dateCompleted))}</td>
+
+        <td>
+          ${tags.map(tag => {
+
+            const safeTag = esc(tag);
+
+            const pillClass = safeTag
+              .toUpperCase()
+              .replace(/[^A-Z0-9_-]/g, '');
+
+            return `
+              <span class="pill ${pillClass}">
+                ${safeTag}
+              </span>
+            `;
+
+          }).join(' ')}
+        </td>
+
+        <td>${esc(record.remarks)}</td>
+
+        <td>
+          <strong>${esc(record.ticket)}</strong>
+        </td>
+
+      </tr>
+
+    `;
+
+  }).join('');
+
 }
+
+
+// =====================================================
+// GET FINAL VALUES FROM OTHER FIELDS
+// =====================================================
+
+function getOtherValue(selectId, inputId, label) {
+
+  const selected = $(selectId).value;
+
+  if (selected === 'Others') {
+
+    const specified = $(inputId).value.trim();
+
+    if (!specified) {
+
+      throw new Error(
+        'Please specify the other ' + label + '.'
+      );
+
+    }
+
+    return 'Others: ' + specified;
+
+  }
+
+  return selected;
+
+}
+
+
+// =====================================================
+// RESET FORM AND RESTORE DEFAULTS
+// =====================================================
+
+$('recordForm').addEventListener('reset', () => {
+
+  setTimeout(() => {
+
+    clearStatus();
+
+    // Restore today's date after reset.
+
+    $('dateReceived').value = getLocalDateString();
+
+    $('dateCompleted').value = '';
+
+    // Restore all conditional fields.
+
+    otherSelects.forEach(([control, field, input]) => {
+
+      toggleOtherField(
+        field,
+        input,
+        $(control).value === 'Others'
+      );
+
+    });
+
+    updateModeOtherField();
+
+    updateTagOtherField();
+
+    updateTicketPreview();
+
+  }, 0);
+
+});
 
 
 // =====================================================
 // SAVE COMMUNICATION RECORD
 // =====================================================
 
-$('recordForm').addEventListener('submit', async e => {
+$('recordForm').addEventListener('submit', async event => {
 
-  e.preventDefault();
+  event.preventDefault();
+
+  clearStatus();
+
+
+  // ---------------------------------------------------
+  // VALIDATE COMMUNICATION MODES
+  // ---------------------------------------------------
 
   let modes = selectedChecks('mode');
 
-  const tags = selectedChecks('tag');
-
-  const modeOther = $('modeOther').value.trim();
-
-  const stakeholderValue = $('stakeholder').value;
-
-  const stakeholderOther = $('stakeholderOther').value.trim();
-  const departmentValue = $('department').value;
-  const departmentOther = $('departmentOther').value.trim();
-  const commTypeValue = $('commType').value;
-  const commTypeOther = $('commTypeOther').value.trim();
-  const slaValue = $('sla').value;
-  const slaOther = $('slaOther').value.trim();
-  const infoTypeValue = $('infoType').value;
-  const infoTypeOther = $('infoTypeOther').value.trim();
-  const tagOther = $('tagOther').value.trim();
-
-
-  // Validate communication mode
-
   if (!modes.length) {
 
-    alert('Select at least one mode of communication.');
+    alert(
+      'Select at least one mode of communication.'
+    );
 
     return;
 
   }
 
 
-  // Validate tagging
+  // ---------------------------------------------------
+  // VALIDATE TAGGING
+  // ---------------------------------------------------
+
+  let tags = selectedChecks('tag');
+
   if (!tags.length) {
-    alert('Select at least one tagging status.');
-    return;
-  }
 
-  // Validate every selected "Others" choice.
-  const otherRequirements = [
-    [departmentValue === 'Others', departmentOther, 'other department / unit', 'departmentOther'],
-    [commTypeValue === 'Others', commTypeOther, 'other communication type', 'commTypeOther'],
-    [slaValue === 'Others', slaOther, 'other service level agreement', 'slaOther'],
-    [infoTypeValue === 'Others', infoTypeOther, 'other information type', 'infoTypeOther'],
-    [tags.includes('Others'), tagOther, 'other tagging status', 'tagOther']
-  ];
-
-  for (const [selected, value, label, inputId] of otherRequirements) {
-    if (selected && !value) {
-      alert('Please specify the ' + label + '.');
-      $(inputId).focus();
-      return;
-    }
-  }
-
-  // Validate Other Communication Mode
-
-  if (modes.includes('Others') && !modeOther) {
-
-    alert('Please specify the other mode of communication.');
-
-    $('modeOther').focus();
+    alert(
+      'Select at least one tagging status.'
+    );
 
     return;
 
   }
 
 
-  // Validate Other Stakeholder
+  // ---------------------------------------------------
+  // GET OTHER VALUES
+  // ---------------------------------------------------
 
-  if (stakeholderValue === 'Others' && !stakeholderOther) {
-
-    alert('Please specify the other stakeholder.');
-
-    $('stakeholderOther').focus();
-
-    return;
-
-  }
-
-
-  // Store specified communication mode
-
-  modes = modes.map(mode =>
-
-    mode === 'Others'
-      ? 'Others: ' + modeOther
-      : mode
-
-  );
-
-
-  // Store specified stakeholder and other select/checkbox choices.
-  const stakeholder = stakeholderValue === 'Others'
-    ? 'Others: ' + stakeholderOther
-    : stakeholderValue;
-
-  const department = departmentValue === 'Others'
-    ? 'Others: ' + departmentOther
-    : departmentValue;
-
-  const commType = commTypeValue === 'Others'
-    ? 'Others: ' + commTypeOther
-    : commTypeValue;
-
-  const sla = slaValue === 'Others'
-    ? 'Others: ' + slaOther
-    : slaValue;
-
-  const infoType = infoTypeValue === 'Others'
-    ? 'Others: ' + infoTypeOther
-    : infoTypeValue;
-
-  const finalTags = tags.map(tag =>
-    tag === 'Others' ? 'Others: ' + tagOther : tag
-  );
-
-  // DATABASE PAYLOAD
-  const payload = {
-    department: department,
-    modes: modes,
-    stakeholder: stakeholder,
-    commType: commType,
-    sla: sla,
-    infoType: infoType,
-
-    dateReceived: $('dateReceived').value,
-
-    dateCompleted: $('dateCompleted').value,
-
-    tags: finalTags,
-
-    remarks: $('remarks').value.trim()
-
-  };
-
-
-  // SUBMISSION PROCESS
-
-  const btn = $('submitBtn');
-
-  btn.disabled = true;
-
-  btn.textContent = 'Saving...';
+  let department;
+  let stakeholder;
+  let commType;
+  let sla;
+  let infoType;
 
 
   try {
 
-    const res = await fetch(API_URL, {
+    department = getOtherValue(
+      'department',
+      'departmentOther',
+      'department / unit'
+    );
 
-      method: 'POST',
+    stakeholder = getOtherValue(
+      'stakeholder',
+      'stakeholderOther',
+      'stakeholder'
+    );
 
-      redirect: "follow",
+    commType = getOtherValue(
+      'commType',
+      'commTypeOther',
+      'communication type'
+    );
 
-      body: JSON.stringify(payload)
+    sla = getOtherValue(
+      'sla',
+      'slaOther',
+      'service level agreement'
+    );
+
+    infoType = getOtherValue(
+      'infoType',
+      'infoTypeOther',
+      'information type'
+    );
+
+
+    // -------------------------------------------------
+    // VALIDATE OTHER MODE
+    // -------------------------------------------------
+
+    const modeOther = $('modeOther').value.trim();
+
+    if (modes.includes('Others') && !modeOther) {
+
+      throw new Error(
+        'Please specify the other mode of communication.'
+      );
+
+    }
+
+
+    // -------------------------------------------------
+    // VALIDATE OTHER TAG
+    // -------------------------------------------------
+
+    const tagOther = $('tagOther').value.trim();
+
+    if (tags.includes('Others') && !tagOther) {
+
+      throw new Error(
+        'Please specify the other tagging status.'
+      );
+
+    }
+
+
+    // -------------------------------------------------
+    // VALIDATE DATES
+    // -------------------------------------------------
+
+    const dateReceived = $('dateReceived').value;
+
+    const dateCompleted = $('dateCompleted').value;
+
+    if (!dateReceived) {
+
+      throw new Error(
+        'Please enter the date submitted / received.'
+      );
+
+    }
+
+    if (
+      dateCompleted &&
+      dateCompleted < dateReceived
+    ) {
+
+      throw new Error(
+        'Date completed / replied cannot be earlier than the date submitted / received.'
+      );
+
+    }
+
+
+    // -------------------------------------------------
+    // FINALIZE MODE VALUES
+    // -------------------------------------------------
+
+    modes = modes.map(mode => {
+
+      return mode === 'Others'
+        ? 'Others: ' + modeOther
+        : mode;
 
     });
 
 
-    const text = await res.text();
+    // -------------------------------------------------
+    // FINALIZE TAG VALUES
+    // -------------------------------------------------
 
-    let result;
+    const finalTags = tags.map(tag => {
+
+      return tag === 'Others'
+        ? 'Others: ' + tagOther
+        : tag;
+
+    });
+
+
+    // -------------------------------------------------
+    // DATABASE PAYLOAD
+    // -------------------------------------------------
+
+    const payload = {
+
+      department: department,
+
+      modes: modes,
+
+      stakeholder: stakeholder,
+
+      commType: commType,
+
+      sla: sla,
+
+      infoType: infoType,
+
+      dateReceived: dateReceived,
+
+      dateCompleted: dateCompleted,
+
+      tags: finalTags,
+
+      remarks: $('remarks').value.trim()
+
+    };
+
+
+    // -------------------------------------------------
+    // SUBMISSION PROCESS
+    // -------------------------------------------------
+
+    const button = $('submitBtn');
+
+    button.disabled = true;
+
+    button.textContent = 'Saving Record...';
+
+    showStatus(
+      'Submitting communication record to the central database...',
+      'info'
+    );
+
 
     try {
 
-      result = JSON.parse(text);
+      const response = await fetch(API_URL, {
 
-    } catch (err) {
+        method: 'POST',
 
-      throw new Error("Invalid server response: " + text);
+        redirect: 'follow',
+
+        body: JSON.stringify(payload)
+
+      });
+
+
+      if (!response.ok) {
+
+        throw new Error(
+          'HTTP Error: ' + response.status
+        );
+
+      }
+
+
+      const responseText = await response.text();
+
+      let result;
+
+      try {
+
+        result = JSON.parse(responseText);
+
+      } catch (error) {
+
+        throw new Error(
+          'Invalid response received from Google Apps Script.'
+        );
+
+      }
+
+
+      if (result.status === 'success') {
+
+        const officialTrackingNumber =
+          result.trackingNumber || 'Not returned by server';
+
+
+        showStatus(
+          'Record successfully saved! Official Tracking Number: ' +
+          officialTrackingNumber,
+          'success'
+        );
+
+
+        alert(
+          'COMMUNICATION RECORD SUCCESSFULLY SAVED!\n\n' +
+          'Official Tracking Number:\n' +
+          officialTrackingNumber
+        );
+
+
+        // Clear the form.
+
+        $('recordForm').reset();
+
+
+        // Refresh records from the database.
+
+        await loadDatabaseRecords();
+
+
+      } else {
+
+        throw new Error(
+          result.message || 'Unknown database error.'
+        );
+
+      }
+
+    } finally {
+
+      button.disabled = false;
+
+      button.textContent = 'Save Communication Record';
 
     }
 
+  } catch (error) {
 
-    btn.disabled = false;
-
-    btn.textContent = 'Save Communication Record';
-
-
-    if (result.status === 'success') {
-
-      alert(
-        'Record saved! Tracking Number: ' +
-        result.trackingNumber
-      );
-
-      e.target.reset();
-
-      loadDatabaseRecords();
-
-    } else {
-
-      alert(
-        'Error saving record: ' +
-        (result.message || 'Unknown error')
-      );
-
-    }
-
-  } catch (err) {
-
-    btn.disabled = false;
-
-    btn.textContent = 'Save Communication Record';
-
-    alert(
-      'Failed to connect to Google Apps Script backend: ' +
-      err.message
+    console.error(
+      'Submission error:',
+      error
     );
 
-    console.error(err);
+    showStatus(
+      error.message || 'Failed to save communication record.',
+      'error'
+    );
+
+    alert(
+      'Unable to save communication record:\n\n' +
+      error.message
+    );
+
+    const button = $('submitBtn');
+
+    button.disabled = false;
+
+    button.textContent = 'Save Communication Record';
 
   }
 
@@ -1230,23 +2003,37 @@ $('recordForm').addEventListener('submit', async e => {
 
 
 // =====================================================
-// SEARCH RECORDS
+// SEARCH COMMUNICATION RECORDS
 // =====================================================
 
-$('search').addEventListener('input', renderTable);
+$('search').addEventListener(
+  'input',
+  renderTable
+);
+
+
+// =====================================================
+// MANUAL DATABASE REFRESH
+// =====================================================
+
+$('refreshRecords').addEventListener(
+  'click',
+  loadDatabaseRecords
+);
 
 
 // =====================================================
 // EXPORT COMMUNICATION REGISTER TO CSV
 // =====================================================
 
-function csvCell(v) {
+function csvCell(value) {
 
   return '"' +
-    String(v ?? '').replace(/"/g, '""') +
+    String(value ?? '').replace(/"/g, '""') +
     '"';
 
 }
+
 
 $('exportCsv').addEventListener('click', () => {
 
@@ -1277,33 +2064,33 @@ $('exportCsv').addEventListener('click', () => {
   ];
 
 
-  const rows = records.map(r => [
+  const rows = records.map(record => [
 
-    r.department,
+    record.department,
 
-    Array.isArray(r.modes)
-      ? r.modes.join('; ')
-      : r.modes,
+    Array.isArray(record.modes)
+      ? record.modes.join('; ')
+      : record.modes,
 
-    r.stakeholder,
+    record.stakeholder,
 
-    r.commType,
+    record.commType,
 
-    r.sla,
+    record.sla,
 
-    r.infoType,
+    record.infoType,
 
-    formatDate(r.dateReceived),
+    formatDate(record.dateReceived),
 
-    formatDate(r.dateCompleted),
+    formatDate(record.dateCompleted),
 
-    Array.isArray(r.tags)
-      ? r.tags.join('; ')
-      : r.tags,
+    Array.isArray(record.tags)
+      ? record.tags.join('; ')
+      : record.tags,
 
-    r.remarks,
+    record.remarks,
 
-    r.ticket
+    record.ticket
 
   ]);
 
@@ -1321,24 +2108,30 @@ $('exportCsv').addEventListener('click', () => {
 
     [csv],
 
-    { type: 'text/csv;charset=utf-8;' }
+    {
+      type: 'text/csv;charset=utf-8;'
+    }
 
   );
 
 
   const url = URL.createObjectURL(blob);
 
-  const a = document.createElement('a');
+  const link = document.createElement('a');
 
-  a.href = url;
+  link.href = url;
 
-  a.download = 'CCO_Communication_Register.csv';
+  link.download =
+    'CCO_Communication_Register_' +
+    getLocalDateString() +
+    '.csv';
 
-  document.body.appendChild(a);
 
-  a.click();
+  document.body.appendChild(link);
 
-  a.remove();
+  link.click();
+
+  link.remove();
 
   URL.revokeObjectURL(url);
 
@@ -1346,8 +2139,34 @@ $('exportCsv').addEventListener('click', () => {
 
 
 // =====================================================
+// PRINT COMMUNICATION REGISTER
+// =====================================================
+
+$('printRegister').addEventListener('click', () => {
+
+  window.print();
+
+});
+
+
+// =====================================================
 // INITIALIZE SYSTEM
 // =====================================================
+
+initializeOtherSelects();
+
+
+// Set today's date as the default submission date.
+
+$('dateReceived').value = getLocalDateString();
+
+
+// Generate initial tracking number preview.
+
+updateTicketPreview();
+
+
+// Load records from Google Sheets.
 
 loadDatabaseRecords();
 
