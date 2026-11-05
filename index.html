@@ -815,62 +815,60 @@ function formatDate(val) {
 // CONDITIONAL OTHER FIELDS
 // =====================================================
 
-// Mode of Communication: Others
+function toggleOtherField(control, field, input, isSelected) {
+  const selected = isSelected();
+  $(field).style.display = selected ? 'flex' : 'none';
+  $(input).required = selected;
+  if (!selected) $(input).value = '';
+}
+
+const otherSelects = [
+  ['department', 'departmentOtherField', 'departmentOther'],
+  ['stakeholder', 'stakeholderOtherField', 'stakeholderOther'],
+  ['commType', 'commTypeOtherField', 'commTypeOther'],
+  ['sla', 'slaOtherField', 'slaOther'],
+  ['infoType', 'infoTypeOtherField', 'infoTypeOther']
+];
+
+otherSelects.forEach(([control, field, input]) => {
+  const update = () => toggleOtherField(
+    control, field, input, () => $(control).value === 'Others'
+  );
+  $(control).addEventListener('change', update);
+  update();
+});
 
 function updateModeOtherField() {
-
-  const selected = selectedChecks('mode').includes('Others');
-
-  $('modeOtherField').style.display =
-    selected ? 'flex' : 'none';
-
-  $('modeOther').required = selected;
-
-  if (!selected) {
-    $('modeOther').value = '';
-  }
+  toggleOtherField(
+    'mode', 'modeOtherField', 'modeOther',
+    () => selectedChecks('mode').includes('Others')
+  );
 }
 
-document.querySelectorAll('input[name="mode"]').forEach(check => {
-
-  check.addEventListener('change', updateModeOtherField);
-
-});
-
-
-// Stakeholder: Others
-
-function updateStakeholderOtherField() {
-
-  const selected = $('stakeholder').value === 'Others';
-
-  $('stakeholderOtherField').style.display =
-    selected ? 'flex' : 'none';
-
-  $('stakeholderOther').required = selected;
-
-  if (!selected) {
-    $('stakeholderOther').value = '';
-  }
+function updateTagOtherField() {
+  toggleOtherField(
+    'tag', 'tagOtherField', 'tagOther',
+    () => selectedChecks('tag').includes('Others')
+  );
 }
 
-$('stakeholder').addEventListener(
-  'change',
-  updateStakeholderOtherField
+document.querySelectorAll('input[name="mode"]').forEach(check =>
+  check.addEventListener('change', updateModeOtherField)
+);
+document.querySelectorAll('input[name="tag"]').forEach(check =>
+  check.addEventListener('change', updateTagOtherField)
 );
 
-
-// Reset conditional fields after clearing the form
-
+// Reset conditional fields after clearing the form.
 $('recordForm').addEventListener('reset', () => {
-
   setTimeout(() => {
+    otherSelects.forEach(([control, field, input]) => {
+      toggleOtherField(control, field, input, () => $(control).value === 'Others');
+    });
     updateModeOtherField();
-    updateStakeholderOtherField();
+    updateTagOtherField();
   }, 0);
-
 });
-
 
 // =====================================================
 // LOAD DATABASE RECORDS
@@ -1023,8 +1021,16 @@ $('recordForm').addEventListener('submit', async e => {
 
   const stakeholderValue = $('stakeholder').value;
 
-  const stakeholderOther =
-    $('stakeholderOther').value.trim();
+  const stakeholderOther = $('stakeholderOther').value.trim();
+  const departmentValue = $('department').value;
+  const departmentOther = $('departmentOther').value.trim();
+  const commTypeValue = $('commType').value;
+  const commTypeOther = $('commTypeOther').value.trim();
+  const slaValue = $('sla').value;
+  const slaOther = $('slaOther').value.trim();
+  const infoTypeValue = $('infoType').value;
+  const infoTypeOther = $('infoTypeOther').value.trim();
+  const tagOther = $('tagOther').value.trim();
 
 
   // Validate communication mode
@@ -1039,15 +1045,27 @@ $('recordForm').addEventListener('submit', async e => {
 
 
   // Validate tagging
-
   if (!tags.length) {
-
     alert('Select at least one tagging status.');
-
     return;
-
   }
 
+  // Validate every selected "Others" choice.
+  const otherRequirements = [
+    [departmentValue === 'Others', departmentOther, 'other department / unit', 'departmentOther'],
+    [commTypeValue === 'Others', commTypeOther, 'other communication type', 'commTypeOther'],
+    [slaValue === 'Others', slaOther, 'other service level agreement', 'slaOther'],
+    [infoTypeValue === 'Others', infoTypeOther, 'other information type', 'infoTypeOther'],
+    [tags.includes('Others'), tagOther, 'other tagging status', 'tagOther']
+  ];
+
+  for (const [selected, value, label, inputId] of otherRequirements) {
+    if (selected && !value) {
+      alert('Please specify the ' + label + '.');
+      $(inputId).focus();
+      return;
+    }
+  }
 
   // Validate Other Communication Mode
 
@@ -1086,36 +1104,45 @@ $('recordForm').addEventListener('submit', async e => {
   );
 
 
-  // Store specified stakeholder
-
+  // Store specified stakeholder and other select/checkbox choices.
   const stakeholder = stakeholderValue === 'Others'
-
     ? 'Others: ' + stakeholderOther
-
     : stakeholderValue;
 
+  const department = departmentValue === 'Others'
+    ? 'Others: ' + departmentOther
+    : departmentValue;
+
+  const commType = commTypeValue === 'Others'
+    ? 'Others: ' + commTypeOther
+    : commTypeValue;
+
+  const sla = slaValue === 'Others'
+    ? 'Others: ' + slaOther
+    : slaValue;
+
+  const infoType = infoTypeValue === 'Others'
+    ? 'Others: ' + infoTypeOther
+    : infoTypeValue;
+
+  const finalTags = tags.map(tag =>
+    tag === 'Others' ? 'Others: ' + tagOther : tag
+  );
 
   // DATABASE PAYLOAD
-
   const payload = {
-
-    department: $('department').value,
-
+    department: department,
     modes: modes,
-
     stakeholder: stakeholder,
-
-    commType: $('commType').value,
-
-    sla: $('sla').value,
-
-    infoType: $('infoType').value,
+    commType: commType,
+    sla: sla,
+    infoType: infoType,
 
     dateReceived: $('dateReceived').value,
 
     dateCompleted: $('dateCompleted').value,
 
-    tags: tags,
+    tags: finalTags,
 
     remarks: $('remarks').value.trim()
 
